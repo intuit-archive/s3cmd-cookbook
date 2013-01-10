@@ -25,11 +25,11 @@ Downloads a file from s3
 
     s3cmd_file "LOCAL_FILE" do
       action :download
-      bucket BUCKET_TO_DOWNLOAD_FROM
-      object_name OBJECT_TO_DOWNLOAD
-      owner LOCAL_FILE_OWNER
-      group LOCAL_FILE_GROUP
-      mode LOCAL_FILE_MODE
+      bucket "BUCKET_TO_DOWNLOAD_FROM"
+      object_name "OBJECT_TO_DOWNLOAD"
+      owner "LOCAL_FILE_OWNER"
+      group "LOCAL_FILE_GROUP"
+      mode "LOCAL_FILE_MODE"
     end
 
 # Authors
