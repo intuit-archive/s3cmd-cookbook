@@ -1,4 +1,4 @@
-name             's3cmd-cookbook'
+name             's3cmd'
 maintainer       'Brett Weaver'
 maintainer_email 'brett_weaver@intuit.com'
 license          'Apache 2.0'
