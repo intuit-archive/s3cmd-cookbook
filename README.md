@@ -12,8 +12,8 @@ Platform:
 Add the s3cmd cookbook to your role/run_list.
 
 # Attributes
-
-None
+## default
+node["s3cmd"]["version"] - Version of s3cmd to install.
 
 # Recipes
 ## default
