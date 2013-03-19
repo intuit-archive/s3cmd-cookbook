@@ -21,6 +21,7 @@ Configures s3cmd
 
 # Providers
 ## file
+### Download
 Downloads a file from s3
 
     s3cmd_file "LOCAL_FILE" do
@@ -30,6 +31,18 @@ Downloads a file from s3
       owner "LOCAL_FILE_OWNER"
       group "LOCAL_FILE_GROUP"
       mode "LOCAL_FILE_MODE"
+      force true
+    end
+
+### Upload
+Uploads a file to s3
+
+    s3cmd_file "LOCAL_FILE" do
+      action :upload
+      bucket "BUCKET_TO_DOWNLOAD_FROM"
+      object_name "OBJECT_TO_DOWNLOAD"
+      public true
+      force true
     end
 
 # Authors
