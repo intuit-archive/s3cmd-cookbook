@@ -27,7 +27,7 @@ action :upload do
   acl_public  = new_resource.public ? '--acl-public' : ''
   force       = new_resource.force ? '--force' : ''
 
-  execute "Downloading #{file_name} to s3://#{bucket}/#{object_name}" do
+  execute "Uploading #{file_name} to s3://#{bucket}/#{object_name}" do
     command "s3cmd #{force} #{acl_public} put #{file_name} s3://#{bucket}/#{object_name}"
   end
 
