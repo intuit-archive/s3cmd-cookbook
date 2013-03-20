@@ -41,7 +41,7 @@ Uploads a file to s3
       action :upload
       bucket "BUCKET_TO_DOWNLOAD_FROM"
       object_name "OBJECT_TO_DOWNLOAD"
-      public true
+      acl_public true
       force true
     end
 

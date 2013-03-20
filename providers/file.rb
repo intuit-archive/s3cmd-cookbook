@@ -24,7 +24,7 @@ action :upload do
   file_name   = new_resource.file_name
   bucket      = new_resource.bucket
   object_name = new_resource.object_name
-  acl_public  = new_resource.public ? '--acl-public' : ''
+  acl_public  = new_resource.acl_public ? '--acl-public' : ''
   force       = new_resource.force ? '--force' : ''
 
   execute "Uploading #{file_name} to s3://#{bucket}/#{object_name}" do
