@@ -7,4 +7,4 @@ attribute :owner, :kind_of => String, :default => 'root'
 attribute :group, :kind_of => String, :default => 'root'
 attribute :mode, :kind_of => String, :default => '0600'
 attribute :force, :kind_of => [ TrueClass, FalseClass ], :default => true
-attribute :public, :kind_of => [ TrueClass, FalseClass ], :default => false
+attribute :acl_public, :kind_of => [ TrueClass, FalseClass ], :default => false
