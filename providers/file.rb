@@ -21,14 +21,19 @@ end
 
 action :upload do
 
+  headers     = new_resource.headers
   file_name   = new_resource.file_name
   bucket      = new_resource.bucket
   object_name = new_resource.object_name
   acl_public  = new_resource.acl_public ? '--acl-public' : ''
   force       = new_resource.force ? '--force' : ''
 
+  cmd =  "s3cmd #{force} #{acl_public} "
+  cmd << headers.each_pair.map {|k,v| "--add-header=#{k}:#{v}"}.join ' '
+  cmd << " put #{file_name} s3://#{bucket}/#{object_name}"
+
   execute "Uploading #{file_name} to s3://#{bucket}/#{object_name}" do
-    command "s3cmd #{force} #{acl_public} put #{file_name} s3://#{bucket}/#{object_name}"
+    command cmd
   end
 
 end

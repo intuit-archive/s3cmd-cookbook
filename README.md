@@ -40,6 +40,8 @@ Uploads a file to s3
     s3cmd_file "LOCAL_FILE" do
       action :upload
       bucket "BUCKET_TO_DOWNLOAD_FROM"
+      headers 'header1' => 'value1',
+              'header2' => 'value2'
       object_name "OBJECT_TO_DOWNLOAD"
       acl_public true
       force true
