@@ -29,7 +29,7 @@ action :upload do
   force       = new_resource.force ? '--force' : ''
 
   cmd =  "s3cmd #{force} #{acl_public} "
-  cmd << headers.each_pair.map {|k,v| "--add-header=#{k}:#{v}"}.join(' ')
+  cmd << headers.each_pair.map {|k,v| "--add-header='#{k}':'#{v}'"}.join(' ')
   cmd << " put #{file_name} s3://#{bucket}/#{object_name}"
 
   execute "Uploading #{file_name} to s3://#{bucket}/#{object_name}" do
