@@ -8,7 +8,7 @@ class Upload
     object_name = args[:object_name]
     file_name   = args[:file_name]
 
-    object_url = "s3://" + File.join(bucket, object_name)
+    object_url = "s3://#{File.join bucket, object_name}"
 
     cmd =  "s3cmd #{acl_public} "
     cmd << headers
