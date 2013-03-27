@@ -44,7 +44,6 @@ Uploads a file to s3
               'header2' => 'value2'
       object_name "OBJECT_TO_DOWNLOAD"
       acl_public true
-      force true
     end
 
 # Authors
