@@ -2,6 +2,7 @@ actions :download, :upload
 
 attribute :file_name, :kind_of => String, :name_attribute => true
 attribute :bucket, :kind_of => String
+attribute :headers, :kind_of => Hash, :default => {}
 attribute :object_name, :kind_of => String
 attribute :owner, :kind_of => String, :default => 'root'
 attribute :group, :kind_of => String, :default => 'root'
