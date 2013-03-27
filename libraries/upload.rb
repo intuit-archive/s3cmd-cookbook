@@ -13,8 +13,6 @@ class Upload
     cmd =  "s3cmd #{acl_public} "
     cmd << headers
     cmd << " put #{file_name} s3://#{bucket}/#{object_name}"
-
-    cmd
   end
 
   def headers

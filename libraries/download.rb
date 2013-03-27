@@ -10,7 +10,6 @@ class Download
 
     cmd =  "s3cmd #{force} "
     cmd << "get s3://#{bucket}/#{object_name} #{file_name}"
-    cmd
   end
 
 end
