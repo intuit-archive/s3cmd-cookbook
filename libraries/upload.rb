@@ -16,7 +16,7 @@ class Upload
   end
 
   def headers
-    @headers.each_pair.map {|k,v| "--add-header='#{k}':'#{v}'"}.join(' ')
+    @headers.map {|k,v| "--add-header='#{k}':'#{v}'"}.join(' ')
   end
 
 end
