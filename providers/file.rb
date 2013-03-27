@@ -1,5 +1,7 @@
 action :download do
-  cmd = Download.new.command :file_name   => new_resource.file_name,
+  file_name = new_resource.file_name
+
+  cmd = Download.new.command :file_name   => file_name,
                              :bucket      => new_resource.bucket,
                              :object_name => new_resource.object_name,
                              :force       => new_resource.force
