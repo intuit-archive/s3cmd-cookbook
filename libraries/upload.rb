@@ -9,7 +9,7 @@ class Upload
     file_name   = args[:file_name]
     force       = args[:force] ? '--force' : ''
 
-    object_name[0] = '' if object_name[0] == '/'
+    object_name.slice!(0) if object_name.start_with? '/'
 
     cmd =  "s3cmd #{force} #{acl_public} "
     cmd << headers
