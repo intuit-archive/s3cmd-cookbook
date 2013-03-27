@@ -1,9 +1,4 @@
 action :download do
-  file_name   = new_resource.file_name
-  bucket      = new_resource.bucket
-  object_name = new_resource.object_name
-  force       = new_resource.force ? '--force' : ''
-
   cmd = Download.new.command :file_name   => new_resource.file_name,
                              :bucket      => new_resource.bucket,
                              :object_name => new_resource.object_name,
@@ -21,7 +16,7 @@ action :download do
 end
 
 action :upload do
-  cmd = Uplaod.new.command :headers     => new_resource.headers,
+  cmd = Upload.new.command :headers     => new_resource.headers,
                            :file_name   => new_resource.file_name,
                            :bucket      => new_resource.bucket,
                            :object_name => new_resource.object_name,
