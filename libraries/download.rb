@@ -6,10 +6,10 @@ class Download
     file_name   = args[:file_name]
     force       = args[:force] ? '--force' : ''
 
-    object_name.slice!(0) if object_name.start_with? '/'
+    object_url = "s3://" + File.join(bucket, object_name)
 
     cmd =  "s3cmd #{force} "
-    cmd << "get s3://#{bucket}/#{object_name} #{file_name}"
+    cmd << "get #{object_url} #{file_name}"
   end
 
 end

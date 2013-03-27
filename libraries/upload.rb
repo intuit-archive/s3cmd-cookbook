@@ -8,11 +8,11 @@ class Upload
     object_name = args[:object_name]
     file_name   = args[:file_name]
 
-    object_name.slice!(0) if object_name.start_with? '/'
+    object_url = "s3://" + File.join(bucket, object_name)
 
     cmd =  "s3cmd #{acl_public} "
     cmd << headers
-    cmd << " put #{file_name} s3://#{bucket}/#{object_name}"
+    cmd << " put #{file_name} #{object_url}"
   end
 
   def headers
