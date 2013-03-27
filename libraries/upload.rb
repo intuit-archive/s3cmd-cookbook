@@ -7,11 +7,10 @@ class Upload
     bucket      = args[:bucket]
     object_name = args[:object_name]
     file_name   = args[:file_name]
-    force       = args[:force] ? '--force' : ''
 
     object_name.slice!(0) if object_name.start_with? '/'
 
-    cmd =  "s3cmd #{force} #{acl_public} "
+    cmd =  "s3cmd #{acl_public} "
     cmd << headers
     cmd << " put #{file_name} s3://#{bucket}/#{object_name}"
 

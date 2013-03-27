@@ -7,9 +7,8 @@ describe Upload do
               :bucket      => 'b',
               :object_name => 'dir/obj',
               :headers     => { 'h1' => 'v1' },
-              :file_name   => '/tmp/file',
-              :force       => true }
-    @r = "s3cmd --force --acl-public --add-header='h1':'v1' put /tmp/file s3://b/dir/obj"
+              :file_name   => '/tmp/file' }
+    @r = "s3cmd --acl-public --add-header='h1':'v1' put /tmp/file s3://b/dir/obj"
   end
 
   it "should return the comand to upload the given file" do
