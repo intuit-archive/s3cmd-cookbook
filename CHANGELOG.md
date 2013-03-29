@@ -1,3 +1,7 @@
+# 0.2.3
+
+* Updates to not conflict with Chef
+
 # 0.2.2
 
 * Abstracted logic into libraris
