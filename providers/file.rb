@@ -20,7 +20,6 @@ end
 action :upload do
   file_name = new_resource.file_name
 
-  # Using ::File class to prevent conflict with Chef File Resource
   raise Errno::ENOENT, "File #{file_name} not found." unless ::File.exists? file_name
 
   cmd = Upload.new.command :headers     => new_resource.headers,
