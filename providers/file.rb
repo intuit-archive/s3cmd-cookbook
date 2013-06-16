@@ -15,6 +15,8 @@ action :download do
     group new_resource.group
     mode new_resource.mode
   end
+
+  new_resource.updated_by_last_action(true)
 end
 
 action :upload do
@@ -33,4 +35,6 @@ action :upload do
   execute "Uploading to S3 with cmd: '#{cmd}'" do
     command cmd
   end
+
+  new_resource.updated_by_last_action(true)
 end

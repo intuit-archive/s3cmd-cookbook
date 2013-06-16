@@ -1,4 +1,5 @@
 actions :download, :upload
+default_action :download
 
 attribute :file_name, :kind_of => String, :name_attribute => true
 attribute :bucket, :kind_of => String
