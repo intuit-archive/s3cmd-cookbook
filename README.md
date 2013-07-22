@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/intuit/s3cmd-cookbook.png)](http://travis-ci.org/intuit/s3cmd-cookbook)
+
 # s3cmd cookbook
 Configures s3cmd
 
